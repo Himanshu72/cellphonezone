@@ -20,6 +20,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
       rel="stylesheet"
     />
+    <link
+      href="stylesheets/style.css"
+      rel="stylesheet"
+    />
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
   </head>
@@ -39,21 +43,7 @@
       -o-background-size: cover;
       background-size: cover;
     }
-    #nav {
-      background: #0f2027; /* fallback for old browsers */
-      background: -webkit-linear-gradient(
-        to right,
-        #2c5364,
-        #203a43,
-        #0f2027
-      ); /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(
-        to right,
-        #2c5364,
-        #203a43,
-        #0f2027
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    }
+   
     .row {
       margin: 2%;
 
@@ -86,25 +76,7 @@
   border:2px solid #0f2027;
   margin: auto;
  }
- #prebtn{
-  margin: auto;
-  border-radius: 20px; 
-  color: white;
-  border:2px solid transparent;
-  background: #0f2027; /* fallback for old browsers */
-      background: -webkit-linear-gradient(
-        to right,
-        #2c5364,
-        #203a43,
-        #0f2027
-      ); /* Chrome 10-25, Safari 5.1-6 */
-      background: linear-gradient(
-        to right,
-        #2c5364,
-        #203a43,
-        #0f2027
-      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
- }
+ 
  #wwd{
   text-align: justify;
  }
@@ -121,37 +93,15 @@
     <!--Main Navigation-->
     <header >
       <!--Navbar-->
-      <nav class="navbar navbar-dark primary-color fixed-top" id="nav">
-        <a class="navbar-brand" href="#">CellPhoneZone</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-          
-          <li class="nav-item">
-            <a class="nav-link" href="#">Sell</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Buy</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">FAQ</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
-          </li>
-         
-      </nav>
+      <%- include('./common/nav'); -%>
       <!--/.Navbar-->
       <!--Mask-->
       <div class="row" style="height: 100vh; overflow: hidden; text-align: center;">
         <div class="col-md-4" id="herotextcon">
           <div class="row">
           <h2 id="herotext">Buy and Sell Second Hand Smart Phone <i class="fa fa-handshake" ></i></h2>
-        <button class="btn " id="prebtn">Sell</button>  
-        <button class="btn " id="btn">Buy</button>  
+        <button class="btn " id="prebtn"> Sell</button>  
+        <button class="btn " id="btn"> Buy</button>  
         </div>
           <div class="row">
           <p id="type"> </p>
@@ -227,7 +177,7 @@
     <!--Main layout-->
 
     <!--Footer-->
-    <footer></footer>
+    
     <!--Footer-->
 
     <!-- JQuery -->
@@ -252,18 +202,7 @@
     ></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
      <!-- Footer -->
-    <footer class="page-footer font-small" id="nav" style="position: fixed; left: 0; bottom: 0;width: 100%; ">
-      <!-- Footer Links -->
-
-      <!-- Footer Links -->
-
-      <!-- Copyright -->
-      <div class="footer-copyright text-center py-3">
-        Buy And Sell Second Hand Phones:
-        <a href="https://cellphone.co.com/"> cellphone.co</a>
-      </div>
-      <!-- Copyright -->
-    </footer>
+     <%- include('./common/footer') -%>
     <!-- Footer -->
       <script>
         var typed = new Typed('#type', {
