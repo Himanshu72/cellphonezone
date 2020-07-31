@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Cell Phone Zone</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+    />
+    <!-- Google Fonts -->
+    <!-- Bootstrap core CSS -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Material Design Bootstrap -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@1,600&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    html,
+    body,
+    header,
+    #intro {
+      height: 100%;
+    }
+
+    #intro {
+      background: url("https://mdbootstrap.com/img/Photos/Horizontal/Nature/full%20page/img%20%283%29.jpg")
+        no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+    #nav {
+      background: #0f2027; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #2c5364,
+        #203a43,
+        #0f2027
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #2c5364,
+        #203a43,
+        #0f2027
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    }
+    .row {
+      margin: 2%;
+
+      padding: 5%;
+    }
+    #heroimg {
+      width: 100%;
+      height: 80%;
+    }
+    #herotextcon{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;  
+  }
+
+  #herotext{
+    font-family: 'Nunito Sans', sans-serif;
+    text-shadow: 0.5px 0.5px 0.5px;
+    text-align: justify;
+    
+  }
+  #type{
+    font-family: 'Source Code Pro', monospace;
+  }
+ .icon{
+   width: 70%;
+ }
+ #btn{
+  border-radius: 20px; 
+  border:2px solid #0f2027;
+ }
+ #prebtn{
+
+  border-radius: 20px; 
+  color: white;
+  border:2px solid transparent;
+  background: #0f2027; /* fallback for old browsers */
+      background: -webkit-linear-gradient(
+        to right,
+        #2c5364,
+        #203a43,
+        #0f2027
+      ); /* Chrome 10-25, Safari 5.1-6 */
+      background: linear-gradient(
+        to right,
+        #2c5364,
+        #203a43,
+        #0f2027
+      ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ }
+  </style>
+  <body >
+    <!--Landing page-->
+    <!--Main Navigation-->
+    <header >
+      <!--Navbar-->
+      <nav class="navbar navbar-dark primary-color fixed-top" id="nav">
+        <a class="navbar-brand" href="#">CellPhoneZone</a>
+      </nav>
+      <!--/.Navbar-->
+      <!--Mask-->
+      <div class="row" style="height: 100vh; overflow: hidden;">
+        <div class="col-md-4" id="herotextcon">
+          <div class="row">
+          <h2 id="herotext">Buy and Sell Second Hand Smart Phone <i class="fa fa-handshake" ></i></h2>
+        <button class="btn " id="prebtn"> Sign up</button>  
+        <button class="btn " id="btn"> Sig in</button>  
+        </div>
+          <div class="row">
+          <p id="type"> </p>
+          </div>
+        </div>
+        <div class="col-md-8 ">
+          <img src="images/bg1.svg" id="heroimg" alt="image"></div>
+        </div>
+      </div>
+      <!--/.Mask-->
+    </header>
+    <!--Main Navigation-->
+
+    <!--Main layout-->
+    <main>
+      <!-- Section: Features v.1 -->
+<section class="text-center my-5">
+
+  <!-- Section heading -->
+  <h2 class="h1-responsive font-weight-bold my-5">What is Cellphonezone?</h2>
+  <!-- Section description -->
+  <p class="lead grey-text w-responsive mx-auto mb-5" style="text-align: justify;">
+    CellPhoneZone is a platform where users can buy and sell second-hand phones. It also assures the quality of phones before buying and selling them. Place where you can get the best deal.
+
+
+  </p>
+
+  <!-- Grid row -->
+  <div class="row">
+
+    <!-- Grid column -->
+    <div class="col-md-4">
+
+      <img src="images/return.svg" class="icon" alt="easy return" />
+      <h5 class="font-weight-bold my-4">Easy Return</h5>
+      <p class="grey-text mb-md-0 mb-5">
+        You can effortlessly return your phone to us and get your money back. 
+      </p>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-4" style="margin-top: 1%;">
+      <img src="images/money.svg" class="icon" alt="money image" />  
+      <h5 class="font-weight-bold my-4">Best Price</h5>
+      <p class="grey-text mb-md-0 mb-5">
+        
+        Get your phone at a best and affordable price it will help you to save money.
+      </p>
+
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="col-md-4">
+
+      <img src="images/support.svg" class="icon" alt="support image" />
+     
+      <h5 class="font-weight-bold my-4">Support</h5>
+      <p class="grey-text mb-0">If you have a query you can contact us whenever you want.
+      </p>
+
+    </div>
+    <!-- Grid column -->
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Section: Features v.1 -->
+    </main>
+    <!--Main layout-->
+
+    <!--Footer-->
+    <footer></footer>
+    <!--Footer-->
+
+    <!-- JQuery -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+    ></script>
+    <!-- Bootstrap tooltips -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"
+    ></script>
+    <!-- Bootstrap core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"
+    ></script>
+    <!-- MDB core JavaScript -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+     <!-- Footer -->
+    <footer class="page-footer font-small" id="nav" style="position: fixed; left: 0; bottom: 0;width: 100%; ">
+      <!-- Footer Links -->
+
+      <!-- Footer Links -->
+
+      <!-- Copyright -->
+      <div class="footer-copyright text-center py-3">
+        Buy And Sell Second Hand Phones:
+        <a href="https://cellphone.co.com/"> cellphone.co</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+      <script>
+        var typed = new Typed('#type', {
+  strings: ["","Buy <i class='fa fa-shopping-cart' ></i> ","Sell <i class='fa fa-money'></i>","with ease","using cellphonezone :)","get best","for you <i class='fa fa-heart'  ></i>."],
+  typeSpeed: 60,
+  loop:true
+    });0
+
+        </script>
+    </body>
+</html>
