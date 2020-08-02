@@ -17,4 +17,9 @@ router.get("/FAQ", function (req, res, next) {
 router.get("/sell", function (req, res, next) {
   res.render("sell");
 });
+
+router.get("/buy", function (req, res, next) {
+  res.render("buy");
+});
+
 module.exports = router;
