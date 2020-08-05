@@ -22,4 +22,8 @@ router.get("/buy", function (req, res, next) {
   res.render("buy");
 });
 
+router.get("/affiliate", function (req, res, next) {
+  res.render("earnwithus");
+});
+
 module.exports = router;
