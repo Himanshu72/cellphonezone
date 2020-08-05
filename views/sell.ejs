@@ -139,7 +139,7 @@
               <input
                 type="date"
                 class="form-control mb-4"
-                name="phone"
+                name="buying_date"
                 required
               />
 
@@ -147,14 +147,23 @@
                 <textarea
                   class="form-control rounded-0"
                   rows="3"
+                  name="desc"
                   placeholder="Enter Description About Phone "
                   minlength="10"
                   required
                   maxlength="1000"
                 ></textarea>
               </div>
-
-              <!-- Send button -->
+              <div class="form-group" style="text-align: left;">
+                <input
+                  type="file"
+                  name="images"
+                  accept="image/*"
+                  multiple
+                  required
+                  class="custom"
+                />
+              </div>
               <button id="prebtn" style="width: 100%;" type="submit">
                 Sell
               </button>
@@ -189,6 +198,5 @@
     <!-- Footer -->
     <%- include('./common/footer') -%>
     <!-- Footer -->
-    \
   </body>
 </html>
