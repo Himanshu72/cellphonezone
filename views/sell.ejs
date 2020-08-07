@@ -111,15 +111,22 @@
                 />
               </div>
               <div id="productinfo">
-                <input
-                  type="text"
+                <select
                   class="form-control mb-4"
-                  placeholder="Phone Company Name"
                   name="company"
-                  minlength="3"
-                  maxlength="30"
                   required
-                />
+                >
+                <option value="-1">Select Phone Brand</option>
+                <option value="apple">Apple</option>
+                <option value="oneplush">Oneplush</option>
+                <option value="samsung">Samsung</option>
+                <option value="vivo">Vivo</option>
+                <option value="oopo">Oopo</option>
+                <option value="xiaomi">Xiaomi</option> 
+                <option value="other">Other</option> 
+               
+
+                </select>
                 <input
                   type="text"
                   class="form-control mb-4"
@@ -216,7 +223,7 @@
     <%- include('./common/footer') -%>
     <script>
       $(() => {
-        $("#productinfo").hide();
+        $("#productinfo").hide({direction:"right"});
         $("#btn").hide();
        
 
@@ -240,10 +247,11 @@
         if(count==0 && isvalid() ){
             e.preventDefault();
         console.log( $("#prebtn").text("Submit"));
-        $("#personalinfo").hide(1000);
-        $("#productinfo").show(1000);
-        $("#btn").show(1000);
-        count=1;
+        $("#personalinfo").hide({direction:"left"},1000);
+        setTimeout(function(){     $("#productinfo").show({direction:"left"},1000);
+        $("#btn").show({direction:"left"},1000);
+ }, 1000);
+            count=1;
         
         }
         });
@@ -251,9 +259,9 @@
           e.preventDefault();
         count=0;
 
-        $("#personalinfo").show(1000);
-        $("#productinfo").hide(1000);
-        $("#btn").hide(1000);
+        $("#personalinfo").show({direction:"right"},1000);
+        $("#productinfo").hide({direction:"right"},1000);
+        $("#btn").hide({direction:"right"},1000);
         $("#prebtn").text("Next");
         
       });
