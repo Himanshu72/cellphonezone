@@ -44,6 +44,7 @@
 
       padding: 2%;
     }
+    
   </style>
   <body>
     <!--Landing page-->
@@ -76,98 +77,113 @@
           </div>
           <div class="col-md-5">
             <!-- Default form contact -->
-            <form class="text-center p-5" style="text-align: left;" action="#!">
+            <form class="text-center p-5" id="sellform" style="text-align: left;" action="#!">
               <!-- Name -->
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Name"
-                name="name"
-                maxlength="50"
-                minlength="3"
-                require
-              />
-
-              <!-- Email -->
-              <input
-                type="email"
-                class="form-control mb-4"
-                placeholder="E-mail"
-                name="email"
-                required
-                maxlength="320"
-                minlength="3"
-              />
-
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Phone Number"
-                name="phone"
-                pattern="[2-9]{2}\d{8}"
-                required
-              />
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Phone Company Name"
-                name="company"
-                minlength="3"
-                maxlength="30"
-                required
-              />
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Phone Model Number"
-                name="model"
-                minlength="3"
-                maxlength="30"
-                required
-              />
-
-              <label
-                style="
-                  color: rgb(88, 88, 88);
-                  font-weight: 200;
-                  text-align: left;
-                  width: 100%;
-                  padding: 2%;
-                "
-                >Buying Date As Per Bill :</label
-              >
-              <input
-                type="date"
-                class="form-control mb-4"
-                name="buying_date"
-                required
-              />
-
-              <div class="form-group">
-                <textarea
-                  class="form-control rounded-0"
-                  rows="3"
-                  name="desc"
-                  placeholder="Enter Description About Phone "
-                  minlength="10"
-                  required
-                  maxlength="1000"
-                ></textarea>
-              </div>
-              <div class="form-group" style="text-align: left;">
-                <label>Upload Phone Images: </label>
+              <div id="personalinfo">
                 <input
-                  type="file"
-                  name="images"
-                  accept="image/*"
-                  multiple
+                  type="text"
+                  class="form-control mb-4"
+                  placeholder="Name"
+                  name="name"
+                  maxlength="50"
+                  minlength="3"
                   required
-                  class="custom"
+                />
+
+                <!-- Email -->
+                <input
+                  type="email"
+                  class="form-control mb-4"
+                  placeholder="E-mail"
+                  name="email"
+                  required
+                  maxlength="320"
+                  minlength="3"
+                />
+
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  placeholder="Phone Number"
+                  name="phone"
+                  pattern="[2-9]{2}\d{8}"
+                  required
                 />
               </div>
-              <button id="prebtn" style="width: 100%;" type="submit">
-                Sell
+              <div id="productinfo">
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  placeholder="Phone Company Name"
+                  name="company"
+                  minlength="3"
+                  maxlength="30"
+                  required
+                />
+                <input
+                  type="text"
+                  class="form-control mb-4"
+                  placeholder="Phone Model Number"
+                  name="model"
+                  minlength="3"
+                  maxlength="30"
+                  required
+                />
+
+                <label
+                  style="
+                    color: rgb(88, 88, 88);
+                    font-weight: 200;
+                    text-align: left;
+                    width: 100%;
+                    padding: 2%;
+                  "
+                  >Buying Date As Per Bill :</label
+                >
+                <input
+                  type="date"
+                  class="form-control mb-4"
+                  name="buying_date"
+                  required
+                />
+
+                <div class="form-group">
+                  <textarea
+                    class="form-control rounded-0"
+                    rows="3"
+                    name="desc"
+                    placeholder="Enter Description About Phone "
+                    minlength="10"
+                    required
+                    maxlength="1000"
+                  ></textarea>
+                </div>
+                <div class="form-group" style="text-align: left;">
+                  <label>Upload Phone Images: </label>
+                  <input
+                    type="file"
+                    name="images"
+                    accept="image/*"
+                    multiple
+                    required
+                    capture
+                    class="custom"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6" >
+                    <button id="btn" class="btn" style="margin: 1%; type="submit">
+                      Back
+                    </button>
+                    </div>
+                    <div class="col-md-6">
+                    <button id="prebtn"style="margin: 1%;" class="btn" type="submit">
+                Next
               </button>
+              </div>
+            </div>  
+            </button>
             </form>
             <!-- Default form contact -->
           </div>
@@ -198,6 +214,51 @@
     ></script>
     <!-- Footer -->
     <%- include('./common/footer') -%>
+    <script>
+      $(() => {
+        $("#productinfo").hide();
+        $("#btn").hide();
+       
+
+        
+    });
+
+      function isvalid(){
+        let inname=document.querySelector("input[name='name']")
+        let inemail=document.querySelector("input[name='email']")
+        let inphone=document.querySelector("input[name='phone']")
+
+            if(inname.checkValidity() && inemail.checkValidity() &&  inphone.checkValidity()){
+                return 1;
+            } else{
+                return 0;
+            }
+      }
+   let count=0;
+      $("#prebtn").click((e) => {
+       
+        if(count==0 && isvalid() ){
+            e.preventDefault();
+        console.log( $("#prebtn").text("Submit"));
+        $("#personalinfo").hide(1000);
+        $("#productinfo").show(1000);
+        $("#btn").show(1000);
+        count=1;
+        
+        }
+        });
+      $("#btn").click((e)=>{
+          e.preventDefault();
+        count=0;
+
+        $("#personalinfo").show(1000);
+        $("#productinfo").hide(1000);
+        $("#btn").hide(1000);
+        $("#prebtn").text("Next");
+        
+      });
+    </script>
     <!-- Footer -->
+    
   </body>
 </html>
