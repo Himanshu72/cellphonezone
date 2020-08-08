@@ -114,9 +114,10 @@
                 <select
                   class="form-control mb-4"
                   name="company"
+                  id="company"
                   required
                 >
-                <option value="-1">Select Phone Brand</option>
+                <option value="" selected disabled  >Select Phone Brand</option>
                 <option value="apple">Apple</option>
                 <option value="oneplush">Oneplush</option>
                 <option value="samsung">Samsung</option>
@@ -130,7 +131,7 @@
                 <input
                   type="text"
                   class="form-control mb-4"
-                  placeholder="Phone Model Number"
+                  placeholder="Phone Model"
                   name="model"
                   minlength="3"
                   maxlength="30"
@@ -219,6 +220,7 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
     ></script>
+    <script src="javascripts/script.js"></script>
     <!-- Footer -->
     <%- include('./common/footer') -%>
     <script>
@@ -248,9 +250,8 @@
             e.preventDefault();
         console.log( $("#prebtn").text("Submit"));
         $("#personalinfo").hide({direction:"left"},1000);
-        setTimeout(function(){     $("#productinfo").show({direction:"left"},1000);
-        $("#btn").show({direction:"left"},1000);
- }, 1000);
+        $("#productinfo").show({direction:"right"},1000);
+        $("#btn").show({direction:"right"},1000);
             count=1;
         
         }
@@ -260,11 +261,23 @@
         count=0;
 
         $("#personalinfo").show({direction:"right"},1000);
-        $("#productinfo").hide({direction:"right"},1000);
-        $("#btn").hide({direction:"right"},1000);
+        $("#productinfo").hide({direction:"left"},1000);
+        $("#btn").hide({direction:"left"},1000);
         $("#prebtn").text("Next");
         
       });
+
+      const company=document.querySelector("#company");
+      const onchange=()=>{
+
+          if(company.value==="other"){
+
+            document.querySelector("input[name='model']").placeholder="Phone Full Name";         
+           }else{
+            document.querySelector("input[name='model']").placeholder="Phone Model"
+           }
+      }
+        addEvent("change",company,onchange)
     </script>
     <!-- Footer -->
     
