@@ -44,6 +44,13 @@
 
       padding: 2%;
     }
+    .vertical-center {
+      margin: 0;
+      position: absolute;
+      top: 50%;
+      -ms-transform: translateY(-50%);
+      transform: translateY(-50%);
+    }
   </style>
   <body>
     <!--Landing page-->
@@ -75,73 +82,38 @@
             />
           </div>
           <div class="col-md-6">
-            <!-- Default form contact -->
-            <form class="text-center p-5" style="text-align: left;" action="#!">
-              <!-- Name -->
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Name"
-                name="name"
-                maxlength="50"
-                minlength="3"
-                require
-              />
+            <!-- Vertical Steppers -->
+            <div class="row mt-1">
+              <div class="col-md-12">
+                <!-- Stepers Wrapper -->
+                <ul class="stepper stepper-vertical">
+                  <!-- First Step -->
+                   <li class="completed">
+                    <a href="#!">
+                      <span class="circle" id="nav" >1</span>
+                      <span class="label"><button class="btn" id="btn">Required Specific Phone</button></span>
+                    </a>
+                  </li>
 
-              <!-- Email -->
-              <input
-                type="email"
-                class="form-control mb-4"
-                placeholder="E-mail"
-                name="email"
-                required
-                maxlength="320"
-                minlength="3"
-              />
+                  <!-- Second Step -->
+                  <li class="active">
+                    <!--Section Title -->
+                    <a href="#!">
+                      <span class="circle" id="nav" >2</span>
+                      <span class="label"><button class="btn" id="prebtn">Check Available Phone</button></span>
+                    </a>
 
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Phone Number"
-                name="phone"
-                pattern="[2-9]{2}\d{8}"
-                required
-              />
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Required Phone Brand Name"
-                name="company"
-                minlength="3"
-                maxlength="30"
-                required
-              />
-              <input
-                type="text"
-                class="form-control mb-4"
-                placeholder="Required Phone Model Number"
-                name="model"
-                minlength="3"
-                maxlength="30"
-                required
-              />
+                    <!-- Section Description -->
+                    </div>
+                  </li>
 
-              <div class="form-group">
-                <textarea
-                  class="form-control rounded-0"
-                  rows="3"
-                  placeholder="Enter your needs "
-                  minlength="10"
-                  maxlength="1000"
-                ></textarea>
+                  <!-- Third Step -->
+                </ul>
+                <!-- /.Stepers Wrapper -->
               </div>
+            </div>
 
-              <!-- Send button -->
-              <button id="prebtn" style="width: 100%;" type="submit">
-                Buy
-              </button>
-            </form>
-            <!-- Default form contact -->
+            <!-- /.Vertical Steppers -->
           </div>
         </div>
       </section>
