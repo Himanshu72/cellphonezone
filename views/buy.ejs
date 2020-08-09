@@ -134,23 +134,35 @@
       <div class="modal-body">
         <form  class="text-center p-5"  style="text-align: left;" action="#!">
         <input type="email"  class="form-control" name="email" placeholder="Enter Email" required />
+     
+     <br />
+        <input
+        type="text"
+        class="form-control mb-4"
+        
+        placeholder="Phone Number"
+        name="phone"
+        pattern="[2-9]{2}\d{8}"
+        required
+      />
+        <label id="range">0</label>
+      <input  class="multi-range" id="budget" step="500" min="5000" max="200000" style="width: 100%;" type="range" />
+        
         <br />
         <button  class="btn" id="prebtn" type="submit">Submit</button>
          </form> 
-        
+         
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-      
-      </div>
-      
+     
     </div>
   </div>
 </div>
+
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
     ></script>
+    <script type="text/javascript" src="/javascripts/script.js"> </script>
     <!-- Bootstrap tooltips -->
     <script
       type="text/javascript"
@@ -166,9 +178,23 @@
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"
     ></script>
+    <script>
+     
+      </script>
     <!-- Footer -->
     <%- include('./common/footer') -%>
     <!-- Footer -->
-    
+<script>
+  const range =document.querySelector("#range");
+  
+  const budget =document.querySelector("#budget");
+  budget.value=20000;
+  range.innerHTML=`Less Than <i class="fas fa-rupee-sign"></i>${budget.value}`;
+  const changebudget=(e)=>{
+    range.innerHTML=`Less Than <i class="fas fa-rupee-sign"></i>${budget.value}`;
+  }
+  addEvent("change",budget,changebudget)
+
+</script>    
   </body>
 </html>
