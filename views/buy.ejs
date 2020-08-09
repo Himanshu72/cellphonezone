@@ -146,7 +146,7 @@
         required
       />
         <label id="range">0</label>
-      <input  class="multi-range" id="budget" step="500" min="5000" max="200000" style="width: 100%;" type="range" />
+      <input  class="multi-range" id="budget" step="500" min="5000" max="150000" style="width: 100%;" type="range" />
         
         <br />
         <button  class="btn" id="prebtn" type="submit">Submit</button>
@@ -193,7 +193,7 @@
   const changebudget=(e)=>{
     range.innerHTML=`Phone Price Less Than <i class="fas fa-rupee-sign"></i>${budget.value}`;
   }
-  addEvent("change",budget,changebudget)
+  addEvent("input",budget,changebudget)
 
 </script>    
   </body>
