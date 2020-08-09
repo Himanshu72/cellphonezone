@@ -89,16 +89,16 @@
                 <ul class="stepper stepper-vertical">
                   <!-- First Step -->
                    <li class="completed">
-                    <a href="#!">
+                    <a href="/buy/specific">
                       <span class="circle" id="nav" >1</span>
-                      <span class="label"><button class="btn" id="btn">Required Specific Phone</button></span>
+                      <span class="label"><button  class="btn" id="btn">Required Specific Phone</button>  </span>
                     </a>
                   </li>
 
                   <!-- Second Step -->
                   <li class="active">
                     <!--Section Title -->
-                    <a href="#!">
+                    <a  data-toggle="modal" data-target="#basicExampleModal">
                       <span class="circle" id="nav" >2</span>
                       <span class="label"><button class="btn" id="prebtn">Check Available Phone</button></span>
                     </a>
@@ -121,6 +121,32 @@
     </main>
     <!--Main layout-->
 
+    <div class="modal fade" id="basicExampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Check Available Phone</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form  class="text-center p-5"  style="text-align: left;" action="#!">
+        <input type="email"  class="form-control" name="email" placeholder="Enter Email" required />
+        <br />
+        <button  class="btn" id="prebtn" type="submit">Submit</button>
+         </form> 
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+      
+      </div>
+      
+    </div>
+  </div>
+</div>
     <script
       type="text/javascript"
       src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
@@ -143,6 +169,6 @@
     <!-- Footer -->
     <%- include('./common/footer') -%>
     <!-- Footer -->
-    \
+    
   </body>
 </html>

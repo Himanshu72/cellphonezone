@@ -22,6 +22,10 @@ router.get("/buy", function (req, res, next) {
   res.render("buy");
 });
 
+router.get("/buy/specific", function (req, res, next) {
+  res.render("specific");
+});
+
 router.get("/affiliate", function (req, res, next) {
   res.render("earnwithus");
 });
